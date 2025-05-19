@@ -2,7 +2,6 @@ import './App.css'
 
 
 // Importaciones de Componentes
-import Card from './components/Card'
 import Footer from './components/Footer'
 import SectionCart from './components/SectionCart.tsx'
 
@@ -16,18 +15,12 @@ import type { ProductProps } from "./types/ProductProps.ts"
 
 
 function App() {
-  // const { products, error, loading } = useProducts<ProductProps[]>({ url: "https://fakestoreapi.com/products" })
   const { products, error, loading } = useProducts<ProductProps[]>({ url: "https://fakestoreapi.com/products" })
-  // return (
-  //   <>
-  //     {loading && <p>Cargando datos</p>}
-  //     {error && <p>{error}</p>}
-  //     <Card products={products || []} />
-  //   </>
-  // )
+
   return (
     <>
-      {/* <Card products={products || []} /> */}
+      {loading && <p>Cargando datos</p>}
+      {error && <p>{error}</p>}
       <FrontPage />
       <div>
         <SectionCart title="Ropa para hombre" categoryName="men's clothing" products={products} />
