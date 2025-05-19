@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --color-TextBlack: #000000;
+  --color-TextGray: #5b6565;
+  --color-TextWhite: #FFFFFF;
+  --color-BGBlack: #000000;
+  --color-BGWhite: #FFFFFF;
+  --color-BGGray-light: #F2F0F1;
+  --color-BGGray-dark: #c7cdcd;
+
+}
+@theme {
+  --drop-shadow-3xl: 0 35px 35px rgba(0, 0, 0, 0.25); 
+}
