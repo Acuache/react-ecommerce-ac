@@ -54,3 +54,4 @@ export default tseslint.config({
 ```
 
 Link: https://react-ecommerce-ac-ft3x.vercel.app/
+Figma: https://www.figma.com/design/B4annw3TcXL6tVEYnKqWze/IHM?node-id=106-1225&t=cKQvwgPMmPA9lkx1-1
