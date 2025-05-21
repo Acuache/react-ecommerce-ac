@@ -23,7 +23,7 @@ export default function Footer() {
                 context.valor && (
                     <div className='transition-all duration-300 bg-BGBlack  min-w-sm md:min-w-4xl text-balance text-TextWhite flex flex-col gap-7 lg:flex-row lg:justify-around lg:items-center p-4 py-6 md:px-8 rounded-2xl absolute -top-1/80 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
                         <div className="w-full lg:basis-2/3">
-                            <h2 className="text-2xl lg:text-4xl text-balance text-center font-extrabold">MANTÉNGASE AL DIA SOBRE NUESTRAS ÚLTIMAS OFERTAS</h2>
+                            <h2 className="text-2xl lg:text-3xl text-balance text-center font-extrabold">MANTÉNGASE AL DIA SOBRE NUESTRAS ÚLTIMAS OFERTAS</h2>
                         </div>
                         <div className="w-full lg:basis-1/3 text-md flex flex-col gap-3 items-center">
                             <input type="text" placeholder="Introduzca correo electronico" className="md:w-1/2 lg:w-full w-full bg-BGWhite text-gray-500 rounded-md py-1 px-4" />

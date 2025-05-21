@@ -58,7 +58,7 @@ export default function ShoppingCart() {
       <div className='m-auto max-w-7xl'>
          {
             total == 0 ? (
-               <div className='transition-all duration-300 flex flex-col items-center lg:flex-row-reverse'>
+               <div className='transition-all duration-300 flex flex-col items-center lg:flex-row-reverse mt-15'>
                   <div className='lg:basis-1/2'>
                      <img className='w-full h-full object-contain' src={shoppingEmpty} alt="Carro vacio" />
                   </div>

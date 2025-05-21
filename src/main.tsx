@@ -30,7 +30,6 @@ createRoot(document.getElementById('root')!).render(
             <Routes>
                <Route path='/' element={<App />} />
                <Route path='product/:title/:id' element={<CardDetail />} />
-               <Route path="cardsfilters" element={<CardsFilters />} />
                <Route path="shoppingCart" element={<ShoppingCart />} />
                <Route path="*" element={<Error404 />} />
             </Routes>

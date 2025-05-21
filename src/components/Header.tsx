@@ -31,7 +31,6 @@ export default function Header() {
                         <ul className='flex flex-col text-xl p-7 gap-3'>
                             <li><label className='text-2xl cursor-pointer' htmlFor={inputId}><IoMdClose /></label></li>
                             <li><Link to="/">Home</Link></li>
-                            <li><Link to="cardsfilters">Filtro Productos</Link></li>
                             <li>
                                 <form className='bg-BGWhite flex items-center border-2 border-none rounded-2xl px-2 py-1'>
                                     <button type='submit'><label htmlFor={inputIDSearch}><IoSearchOutline className='text-TextGray cursor-pointer' /></label></button>
