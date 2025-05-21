@@ -14,7 +14,7 @@ export default function Card({ products }: { products: ProductProps[] }) {
                return (
                   <article className="w-50 flex flex-col md:w-70" key={product.id}>
                      <Link to={`/product/${encodeURIComponent(product.title)}/${product.id}`}>
-                        <figure className="w-full h-50 bg-BGGray-light rounded-lg p-5 md:h-70">
+                        <figure className="w-full h-50 bg-BGWhite border-2 border-BGGray-dark rounded-lg p-5 md:h-70">
                            <img className="w-full h-full object-contain" src={product.image} alt={product.title} />
                         </figure>
                      </Link>
@@ -27,7 +27,7 @@ export default function Card({ products }: { products: ProductProps[] }) {
                               arrayStarRating.map((element: React.ReactElement<StarType>) => element)
                            }
                         </div>
-                        <p className='text-base md:text-lg'>{product.rating.rate}/<span>5</span></p>
+                        <p className='text-base md:text-lg'>{product.rating.rate}<span className='text-gray-500 text-xs'>/5</span></p>
                      </div>
                      <h4 className="text-xl font-semibold md:text-2xl">S/{product.price}</h4>
                   </article>

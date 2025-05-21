@@ -33,22 +33,24 @@ export default function FrontPage() {
                     <img className="w-full h-full object-contain" src={imgHome} alt="2 Personas Posando para la página" />
                 </figure>
             </div>
-            <div className="flex-shrink-0 bg-BGBlack flex flex-wrap justify-center items-center gap-3 py-4 w-full">
-                <figure className="w-1/6 h-10 p-1">
-                    <img className="w-full h-full object-contain" src={versace} alt={`Logo de ${versace}`} />
-                </figure>
-                <figure className="w-1/6 h-10 p-1">
-                    <img className="w-full h-full object-contain" src={zara} alt={`Logo de ${zara}`} />
-                </figure>
-                <figure className="w-1/6 h-10 p-1">
-                    <img className="w-full h-full object-contain" src={gucci} alt={`Logo de ${gucci}`} />
-                </figure>
-                <figure className="w-1/6 h-10 p-1">
-                    <img className="w-full h-full object-contain" src={prada} alt={`Logo de ${prada}`} />
-                </figure>
-                <figure className="w-1/6 h-10 p-1">
-                    <img className="w-full h-full object-contain" src={calvinKlein} alt={`Logo de ${calvinKlein}`} />
-                </figure>
+            <div className=" w-full  bg-BGBlack">
+                <div className="max-w-7xl flex-shrink-0 flex flex-wrap justify-center items-center gap-3 py-4 m-auto">
+                    <figure className="w-1/6 h-10 p-1">
+                        <img className="w-full h-full object-contain" src={versace} alt={`Logo de ${versace}`} />
+                    </figure>
+                    <figure className="w-1/6 h-10 p-1">
+                        <img className="w-full h-full object-contain" src={zara} alt={`Logo de ${zara}`} />
+                    </figure>
+                    <figure className="w-1/6 h-10 p-1">
+                        <img className="w-full h-full object-contain" src={gucci} alt={`Logo de ${gucci}`} />
+                    </figure>
+                    <figure className="w-1/6 h-10 p-1">
+                        <img className="w-full h-full object-contain" src={prada} alt={`Logo de ${prada}`} />
+                    </figure>
+                    <figure className="w-1/6 h-10 p-1">
+                        <img className="w-full h-full object-contain" src={calvinKlein} alt={`Logo de ${calvinKlein}`} />
+                    </figure>
+                </div>
             </div>
         </main>
     )

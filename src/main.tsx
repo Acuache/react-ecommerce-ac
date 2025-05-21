@@ -5,7 +5,6 @@ import { BrowserRouter, Routes, Route } from 'react-router'
 
 // Importación las pages
 import Error404 from './pages/Error404.tsx'
-import CardsFilters from './pages/CardsFilters.tsx'
 import ShoppingCart from './pages/ShoppingCart.tsx'
 
 // Importaciones de Componentes

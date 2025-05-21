@@ -69,14 +69,14 @@ export default function ShoppingCart() {
                </div>
             ) : (
                <>
-                  <h1 className='text-3xl font-extrabold ml-4'>Tus Productos</h1>
+                  <h1 className='text-3xl font-extrabold ml-4 mt-15 mb-4'>Tus Productos</h1>
                   <main className='flex flex-col max-w-7xl md:flex-row mx-4 gap-3'>
                      <section className='md:basis-6/10 flex flex-col gap-3 '>
                         {
                            context.cartProducts.map((cartProduct, index) => {
                               return (
                                  <article key={index} className='flex flex-row border border-gray-500  h-28 w-full rounded-xl pr-1 overflow-hidden'>
-                                    <figure className='basis-1/4 flex-grow-0 flex-shrink-0 h-full bg-BGGray-light py-3 px-4 '>
+                                    <figure className='basis-1/4 flex-grow-0 flex-shrink-0 h-full bg-BGWhite py-3 px-4 '>
                                        <img className="w-full h-full object-contain" src={cartProduct.image} alt={`Producto ${cartProduct.title} con identificador único ${cartProduct.id}`} />
                                     </figure>
                                     <div className='basis-3/4 flex-grow-0 flex-shrink-0 h-full flex flex-col justify-between p-1'>
