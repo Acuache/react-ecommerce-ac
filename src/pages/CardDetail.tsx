@@ -47,7 +47,7 @@ export default function CardDetail() {
    }
 
    //Lógica de boton
-   const [count, setCount] = useState<number>(0)
+   const [count, setCount] = useState<number>(1)
 
    const handdleClickReduce = () => {
       const newCount = count - 1

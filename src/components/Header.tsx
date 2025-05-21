@@ -4,17 +4,26 @@ import { LuMenu } from "react-icons/lu";
 import { Link } from 'react-router-dom'
 import { IoMdClose } from "react-icons/io";
 import { IoSearchOutline } from "react-icons/io5";
-import { useId } from 'react'
+import { useContext, useId } from 'react'
+
+import { ShoppingCartContext } from '../context/ShoppingCart'
+
 export default function Header() {
     const inputId = useId()
     const inputIDSearch = useId()
+
+    const context = useContext(ShoppingCartContext)
+    const quantity = context.cartProducts.reduce((acumulador, producto) => {
+        return acumulador + producto.quantity
+    }, 0)
 
     return (
         <header className='w-full bg-BGGray-dark text-TextBlac py-2'>
             <div className='max-w-7xl flex justify-between items-center px-4 m-auto'>
                 <Link to="/" className='text-2xl font-extrabold'>ACUACHE</Link>
                 <div className='flex gap-2'>
-                    <Link to="shoppingCart"><PiShoppingCartFill className='text-2xl cursor-pointer' /></Link>
+                    <div>{quantity}</div>
+                    <Link to="shoppingCart"><PiShoppingCartFill className='icon-carrito text-2xl cursor-pointer' /></Link>
                     <label className='cursor-pointer' htmlFor={inputId}><LuMenu className='text-2xl' /></label>
                     <input className='label__input' type="checkbox" id={inputId} />
                     <nav className="label__aside bg-BGGray-dark fixed h-dvh w-70 top-0 right-0 py-4 px-0 shadow-lg z-50">

@@ -1,4 +1,3 @@
-import './App.css'
 
 
 // Importaciones de Componentes
@@ -15,12 +14,10 @@ import type { ProductProps } from "./types/ProductProps.ts"
 
 
 function App() {
-  const { products, error, loading } = useProducts<ProductProps[]>({ url: "https://fakestoreapi.com/products" })
+  const { products } = useProducts<ProductProps[]>({ url: "https://fakestoreapi.com/products" })
 
   return (
     <>
-      {loading && <p>Cargando datos</p>}
-      {error && <p>{error}</p>}
       <FrontPage />
       <div>
         <SectionCart title="Ropa para hombre" categoryName="men's clothing" products={products} />

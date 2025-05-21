@@ -7,9 +7,31 @@ import { RiVisaLine } from "react-icons/ri";
 import { FaApplePay } from "react-icons/fa";
 import { FaGooglePay } from "react-icons/fa";
 import { SiMastercard } from "react-icons/si";
+
+import { useContext } from 'react'
+import { NotificationContext } from '../context/Notification'
 export default function Footer() {
+    const context = useContext(NotificationContext)
+    const handleClick = () => {
+        const newValor: boolean = false
+        context.setValor(newValor)
+    }
     return (
-        <footer className="bg-BGGray-light py-15 w-full flex flex-col items-center px-5">
+        <footer className="bg-BGGray-light py-15 w-full flex flex-col items-center px-5 mt-50 relative pt-30">
+            {/* Formulario informal */}
+            {
+                context.valor && (
+                    <div className='transition-all duration-300 bg-BGBlack  min-w-sm md:min-w-4xl text-balance text-TextWhite flex flex-col gap-7 lg:flex-row lg:justify-around lg:items-center p-4 py-6 md:px-8 rounded-2xl absolute -top-1/80 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
+                        <div className="w-full lg:basis-2/3">
+                            <h2 className="text-2xl lg:text-4xl text-balance text-center font-extrabold">MANTÉNGASE AL DIA SOBRE NUESTRAS ÚLTIMAS OFERTAS</h2>
+                        </div>
+                        <div className="w-full lg:basis-1/3 text-md flex flex-col gap-3 items-center">
+                            <input type="text" placeholder="Introduzca correo electronico" className="md:w-1/2 lg:w-full w-full bg-BGWhite text-gray-500 rounded-md py-1 px-4" />
+                            <button onClick={handleClick} className="w-full lg:w-full rounded-md bg-BGWhite text-TextBlack py-1 cursor-pointer md:w-1/2">Suscríbete</button>
+                        </div>
+                    </div>
+                )
+            }
             <section className="w-full max-w-7xl flex flex-col gap-3 md:flex-row ">
                 <article className="flex flex-col gap-3 mb-4 md:basis-1/4">
                     <h2 className="text-2xl font-bold">ACUACHE</h2>
@@ -84,4 +106,5 @@ export default function Footer() {
 Observaciones:
 1. Falta colocar los Link, osea que me manden a mi portafolio en los iconos de github, wasap, linkend, portafolio
 2. Agregar a futuro sombras cuando paso por algo
+3. Ver si funciona el de suscribirse con correo en otras páginas
 */

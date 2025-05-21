@@ -6,36 +6,127 @@ import { useContext } from 'react'
 
 //Importaciones de componentes 
 import { BsFillTrash3Fill } from "react-icons/bs";
+import { FaArrowRight } from "react-icons/fa";
+import { Link } from 'react-router-dom'
+
+
+// Importaciones de Componentes
+import { FaPlus } from "react-icons/fa";
+import { FaMinus } from "react-icons/fa";
+
+//Importaciones de imagenes
+import shoppingEmpty from '../assets/images/shoppingEmpty.png'
 
 export default function ShoppingCart() {
-    const context = useContext(ShoppingCartContext)
-    return (
-        <main>
-            <h1 className='text-3xl font-extrabold'>Tus Productos</h1>
-            <section>
-                {
-                    context.cartProducts.map((cartProduct, index) => {
-                        return (
-                            <article key={index} className='flex border border-BGGrayDark h-28'>
-                                <figure className='basis-1/3 h-full bg-red-200 py-1'>
-                                    <img className="w-full h-full object-contain" src={cartProduct.image} alt={`Producto ${cartProduct.title} con identificador único ${cartProduct.id}`} />
-                                </figure>
-                                <div className='basis-2/3 h-full flex flex-col justify-between'>
-                                    <div className='flex items-center justify-between'>
-                                        <h2 className='bg-yellow-300 text-base font-bold'>{cartProduct.title}</h2>
-                                        <BsFillTrash3Fill className='text-red-700 cursor-pointer' />
+   const context = useContext(ShoppingCartContext)
+   const handdleClickReduce = (id: number) => {
+      const updatedProducts = context.cartProducts.map(product => {
+         if (product.id === id) {
+            return {
+               ...product,
+               quantity: product.quantity > 1 ? product.quantity - 1 : 1
+            };
+         }
+         return product;
+      });
+      context.setCartProducts(updatedProducts);
+   }
+   const handleClickAument = (id: number) => {
+      const updatedProducts = context.cartProducts.map(product => {
+         if (product.id === id) {
+            return {
+               ...product,
+               quantity: product.quantity + 1
+            };
+         }
+         return product;
+      });
+      context.setCartProducts(updatedProducts);
+   }
+
+   const handleClickDelete = (id: number) => {
+      const newProducts = context.cartProducts.filter(product => product.id !== id);
+      context.setCartProducts(newProducts);
+   }
+   const total: number = context.cartProducts.reduce((acumulador, producto) => {
+      return acumulador + (producto.price * producto.quantity);
+   }, 0);
+
+
+
+   return (
+      <div className='m-auto max-w-7xl'>
+         {
+            total == 0 ? (
+               <div className='transition-all duration-300 flex flex-col items-center lg:flex-row-reverse'>
+                  <div className='lg:basis-1/2'>
+                     <img className='w-full h-full object-contain' src={shoppingEmpty} alt="Carro vacio" />
+                  </div>
+                  <div className='lg:basis-1/2 flex flex-col'>
+                     <h1 className='transition-all duration-300  text-3xl font-bold text-TextBlack text-center lg:text-5xl'>TU CARRITO DE COMPRAS ESTÁ VACIO</h1>
+                     <p className='transition-all duration-300  text-md text-center text-TextGray mt-4 lg:text-xl'>Debe agregar artículos al carrito antes de proceder al pago.</p>
+                  </div>
+               </div>
+            ) : (
+               <>
+                  <h1 className='text-3xl font-extrabold ml-4'>Tus Productos</h1>
+                  <main className='flex flex-col max-w-7xl md:flex-row mx-4 gap-3'>
+                     <section className='md:basis-6/10 flex flex-col gap-3 '>
+                        {
+                           context.cartProducts.map((cartProduct, index) => {
+                              return (
+                                 <article key={index} className='flex flex-row border border-gray-500  h-28 w-full rounded-xl pr-1 overflow-hidden'>
+                                    <figure className='basis-1/4 flex-grow-0 flex-shrink-0 h-full bg-BGGray-light py-3 px-4 '>
+                                       <img className="w-full h-full object-contain" src={cartProduct.image} alt={`Producto ${cartProduct.title} con identificador único ${cartProduct.id}`} />
+                                    </figure>
+                                    <div className='basis-3/4 flex-grow-0 flex-shrink-0 h-full flex flex-col justify-between p-1'>
+                                       <div className='flex items-center justify-between gap-1 container'>
+                                          <Link to={`/product/${encodeURIComponent(cartProduct.title)}/${cartProduct.id}`}>
+                                             <h2 className='transition-all duration-300 text-base font-bold truncate w-70 xl:w-120'>{cartProduct.title}</h2>
+                                          </Link>
+                                          <BsFillTrash3Fill onClick={() => handleClickDelete(cartProduct.id)} className='text-red-700 cursor-pointer text-xl' />
+                                       </div>
+                                       <p className='text-xs'>Tamaño: NO IMPLEMENTADO</p>
+                                       <p className='text-xs'>Color: NO IMPLEMENTADO</p>
+                                       <div className='flex justify-between'>
+                                          <p className='text-xl font-bold'>S/{cartProduct.price}</p>
+                                          <div className="basis-1/4  flex w-fit text-lg md:text-xl">
+                                             <button onClick={() => handdleClickReduce(cartProduct.id)} className="cursor-pointer bg-BGGray-light basis-1/5 px-2 rounded-l-xl  flex justify-center items-center md:px-4 md:py-1"><FaMinus /></button>
+                                             <div className="bg-BGGray-light  basis-3/5 text-red-900  flex justify-center items-center min-w-6 md:py-1">{cartProduct.quantity}</div>
+                                             <button onClick={() => handleClickAument(cartProduct.id)} className="cursor-pointer bg-BGGray-light basis-1/5 px-2 rounded-r-xl  flex justify-center items-center md:px-4 md:py-1"><FaPlus /></button>
+                                          </div>
+                                       </div>
                                     </div>
-                                    <p className='text-xs'>Tamaño: NO IMPLEMENTADO</p>
-                                    <p className='text-xs'>Color: NO IMPLEMENTADO</p>
-                                    <p className='text-xl font-bold'>S/{cartProduct.price}</p>
-                                </div>
-                            </article>
-                        )
-                    })
-                }
-            </section>
-        </main>
-    )
+                                 </article>
+                              )
+                           })
+                        }
+                     </section>
+                     <section className='md:basis-4/10  flex-shrink-0 border border-gray-500 rounded-xl flex flex-col p-5 h-min'>
+                        <article className='flex items-center justify-between'>
+                           <h2 className='text-TextGray'>SubTotal</h2>
+                           <p>S/{(total).toFixed(2)}</p>
+                        </article>
+                        <article className='flex items-center justify-between'>
+                           <h2 className='text-TextGray'>Envio</h2>
+                           <p>S/20.00</p>
+                        </article>
+                        <div className='h-[1px] w-full bg-gray-500 my-3'></div>
+                        <article className='flex items-center justify-between'>
+                           <h2 className='text-TextGray'>Total</h2>
+                           <p>S/{(total + 20).toFixed(2)}</p>
+                        </article>
+                        <button className='flex items-center justify-center gap-4 bg-BGBlack text-TextWhite w-3/4 py-2 rounded-3xl mt-3 mx-auto transition-all duration-300 hover:opacity-85 cursor-pointer'>
+                           <p>Comprar</p>
+                           <FaArrowRight />
+                        </button>
+                     </section>
+                  </main>
+               </>
+            )
+         }
+      </div>
+   )
 }
 
 // Por el momento ninguna observación 

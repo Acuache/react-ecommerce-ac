@@ -11,25 +11,34 @@ import ShoppingCart from './pages/ShoppingCart.tsx'
 // Importaciones de Componentes
 import Header from './components/Header.tsx'
 import CardDetail from './pages/CardDetail.tsx'
+import Footer from './components/Footer.tsx'
+
+//Importaciones de ccontexto
 import { ShoppingCartProvider } from './context/ShoppingCart.tsx'
+import { NotificationProvider } from './context/Notification.tsx'
 
 
 createRoot(document.getElementById('root')!).render(
    <ShoppingCartProvider>
-      <BrowserRouter>
-         {/* Barra de Navegación */}
-         <Header />
+      <NotificationProvider>
 
-         {/* Las páginas a mostrar */}
-         <Routes>
-            <Route path='/' element={<App />} />
-            <Route path='product/:title/:id' element={<CardDetail />} />
-            <Route path="cardsfilters" element={<CardsFilters />} />
-            <Route path="shoppingCart" element={<ShoppingCart />} />
-            <Route path="*" element={<Error404 />} />
-         </Routes>
+         <BrowserRouter>
+            {/* Barra de Navegación */}
+            <Header />
 
-         {/* Pie de páginas */}
-      </BrowserRouter>
+            {/* Las páginas a mostrar */}
+            <Routes>
+               <Route path='/' element={<App />} />
+               <Route path='product/:title/:id' element={<CardDetail />} />
+               <Route path="cardsfilters" element={<CardsFilters />} />
+               <Route path="shoppingCart" element={<ShoppingCart />} />
+               <Route path="*" element={<Error404 />} />
+            </Routes>
+
+            {/* Pie de páginas */}
+            <Footer />
+         </BrowserRouter>
+
+      </NotificationProvider>
    </ShoppingCartProvider>
 )
