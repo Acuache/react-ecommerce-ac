@@ -30,8 +30,8 @@ createRoot(document.getElementById('root')!).render(
             <Routes>
                <Route path='/' element={<App />} />
                <Route path='product/:title/:id' element={<CardDetail />} />
-               <Route path='productos' element={<FiltersCards />} />
-               <Route path="shoppingCart" element={<ShoppingCart />} />
+               <Route path='/productos' element={<FiltersCards />} />
+               <Route path="/shoppingCart" element={<ShoppingCart />} />
                <Route path="*" element={<Error404 />} />
             </Routes>
 
