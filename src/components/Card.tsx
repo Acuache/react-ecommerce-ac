@@ -27,7 +27,7 @@ export default function Card({ products }: { products: ProductProps[] }) {
                               arrayStarRating.map((element: React.ReactElement<StarType>) => element)
                            }
                         </div>
-                        <p className='text-base md:text-lg'>{product.rating.rate}<span className='text-gray-500 text-xs'>/5</span></p>
+                        <p className='text-base md:text-lg'>{product.rating.rate}<span className='text-gray-500 text-xs'>/5.0</span></p>
                      </div>
                      <h4 className="text-xl font-semibold md:text-2xl">S/{product.price}</h4>
                   </article>

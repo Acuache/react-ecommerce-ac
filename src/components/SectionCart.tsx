@@ -15,7 +15,7 @@ import stringUPPERCASE from '../helpers/stringToUpperCase.ts'
 // import { Card } from './Card'
 export default function SectionCart({ categoryName, title, products }: { categoryName: string, title: string, products: ProductProps[] }) {
 
-   if (!products) return <span className="loader"></span>; // Ver a futuro como moverlo
+   if (!products) return <span className="loader"></span>;
 
    // Filtro por categoría
    const filtered = products.filter(p => p.category === categoryName);
