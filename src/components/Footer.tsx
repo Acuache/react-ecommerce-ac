@@ -7,8 +7,9 @@ import { RiVisaLine } from "react-icons/ri";
 import { FaApplePay } from "react-icons/fa";
 import { FaGooglePay } from "react-icons/fa";
 import { SiMastercard } from "react-icons/si";
+import { IoIosSearch } from "react-icons/io";
 
-import { useContext } from 'react'
+import { useContext, useId } from 'react'
 import { NotificationContext } from '../context/Notification'
 export default function Footer() {
     const context = useContext(NotificationContext)
@@ -16,6 +17,7 @@ export default function Footer() {
         const newValor: boolean = false
         context.setValor(newValor)
     }
+    const inputSearch = useId()
     return (
         <footer className="bg-BGGray-light py-15 w-full flex flex-col items-center px-5 mt-50 relative pt-30">
             {/* Formulario informal */}
@@ -26,7 +28,10 @@ export default function Footer() {
                             <h2 className="text-2xl lg:text-3xl text-balance text-center font-extrabold">MANTÉNGASE AL DIA SOBRE NUESTRAS ÚLTIMAS OFERTAS</h2>
                         </div>
                         <div className="w-full lg:basis-1/3 text-md flex flex-col gap-3 items-center">
-                            <input type="text" placeholder="Introduzca correo electronico" className="md:w-1/2 lg:w-full w-full bg-BGWhite text-gray-500 rounded-md py-1 px-4" />
+                            <div className="md:w-1/2 lg:w-full w-full bg-BGWhite text-gray-500 rounded-md py-1 px-4 flex items-center gap-1">
+                                <label htmlFor={inputSearch} className="cursor-pointer text-2xl"><IoIosSearch /></label>
+                                <input id={inputSearch} type="text" placeholder="Introduzca correo electronico" className="w-full outline-none" />
+                            </div>
                             <button onClick={handleClick} className="w-full lg:w-full rounded-md bg-BGWhite text-TextBlack py-1 cursor-pointer md:w-1/2">Suscríbete</button>
                         </div>
                     </div>

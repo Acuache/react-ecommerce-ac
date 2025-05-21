@@ -11,6 +11,7 @@ import ShoppingCart from './pages/ShoppingCart.tsx'
 import Header from './components/Header.tsx'
 import CardDetail from './pages/CardDetail.tsx'
 import Footer from './components/Footer.tsx'
+import FiltersCards from './pages/FiltersCards.tsx'
 
 //Importaciones de ccontexto
 import { ShoppingCartProvider } from './context/ShoppingCart.tsx'
@@ -29,6 +30,7 @@ createRoot(document.getElementById('root')!).render(
             <Routes>
                <Route path='/' element={<App />} />
                <Route path='product/:title/:id' element={<CardDetail />} />
+               <Route path='productos' element={<FiltersCards />} />
                <Route path="shoppingCart" element={<ShoppingCart />} />
                <Route path="*" element={<Error404 />} />
             </Routes>

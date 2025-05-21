@@ -1,7 +1,6 @@
 
 
 // Importaciones de Componentes
-import Footer from './components/Footer'
 import SectionCart from './components/SectionCart.tsx'
 
 // Importaciones de Hooks
@@ -26,7 +25,6 @@ function App() {
         <SectionCart title="Electrodomesticos" categoryName="electronics" products={products} />
       </div>
       <Category />
-      <Footer />
     </>
   )
 }

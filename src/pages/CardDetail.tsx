@@ -70,19 +70,19 @@ export default function CardDetail() {
          {loading && <p>Cargando datos</p>}
          {loading && <p>Cargando datos</p>}
          {error && <p>{error}</p>}
-         <main className='  max-w-7xl flex flex-col  m-auto mt-15 md:mx-none md:flex-row gap-2 md:gap-5 md:h-160'>
+         <main className='p-5  max-w-7xl flex flex-col  m-auto mt-15 md:mx-none md:flex-row gap-2 md:gap-5 md:h-160'>
             <div className='flex flex-col gap-5 md:flex-row-reverse md:basis-1/2'>
-               <figure className='transition-all duration-300 w-full h-70 py-4 md:h-full md:p-5 md:basis-2/3 xl:p-15 bg-BGGray-light'>
+               <figure className='transition-all duration-300 w-full h-70 py-4 md:h-full md:p-5 md:basis-2/3 xl:p-15 bg-BGWhite border-1 rounded-xl'>
                   <img className='w-full h-full object-contain' src={product.image} alt={`Imagen de producto ${nombre} y id ${id}`} />
                </figure>
                <div className='flex gap-3 md:flex-col md:basis-1/3'>
-                  <figure className='basis-1/3 h-50 p-3 bg-BGGray-light'>
+                  <figure className='basis-1/3 h-48 p-3 bg-BGWhite border-1 rounded-xl'>
                      <img className='w-full h-full object-contain' src={product.image} alt={`Imagen de producto ${nombre} y id ${id}`} />
                   </figure>
-                  <figure className='basis-1/3 h-50 p-3 bg-BGGray-light'>
+                  <figure className='basis-1/3 h-48 p-3 bg-BGWhite border-1 rounded-xl'>
                      <img className='w-full h-full object-contain' src={product.image} alt={`Imagen de producto ${nombre} y id ${id}`} />
                   </figure>
-                  <figure className='basis-1/3 h-50 p-3 bg-BGGray-light'>
+                  <figure className='basis-1/3 h-48 p-3 bg-BGWhite border-1 rounded-xl'>
                      <img className='w-full h-full object-contain' src={product.image} alt={`Imagen de producto ${nombre} y id ${id}`} />
                   </figure>
                </div>
@@ -90,15 +90,15 @@ export default function CardDetail() {
             <div className='md:basis-1/2 flex flex-col gap-3'>
                <h1 className='text-2xl font-extrabold md:text-4xl'>{stringToUpperCase(product.title)}</h1>
                <div className='flex gap-2'>
-                  <div className="flex gap-1 text-amber-200 items-center text-lg md:text-2xl">
+                  <div className="flex gap-1 text-amber-200 items-center text-xl md:text-2xl">
                      {
                         arrayStarRating.map((element: React.ReactElement<StarType>) => element)
                      }
                   </div>
-                  <p>{product.rating.rate}/<span>5</span></p>
+                  <p className="text-xl">{product.rating.rate}<span className="text-base text-TextGray">/5</span></p>
                </div>
                <p className='text-TextGray text-sm md:text-lg'>{product.description}</p>
-               <div className='w-full h-[1px] my-2 bg-BGGray-dark'></div>
+               <div className='w-full h-[1px] my-1 bg-BGGray-dark'></div>
                <section>
                   <p className="text-TextGray text-lg">Seleccionar Color</p>
                   <div className='flex gap-1'>
@@ -109,7 +109,7 @@ export default function CardDetail() {
                      <div className='h-10 w-10 rounded-full bg-black'></div>
                   </div>
                </section>
-               <div className='w-full h-[1px] my-2 bg-BGGray-dark'></div>
+               <div className='w-full h-[1px] my-1 bg-BGGray-dark'></div>
                <section>
                   <p className='text-TextGray text-lg'>Talle</p>
                   <div className='flex gap-1'>
@@ -120,7 +120,7 @@ export default function CardDetail() {
                      <div className='h-10 w-10 rounded-full bg-BGGray-dark flex items-center justify-center text-TextBlack'>XL</div>
                   </div>
                </section>
-               <div className='w-full h-[1px] my-2 bg-BGGray-dark'></div>
+               <div className='w-full h-[1px] my-1 bg-BGGray-dark'></div>
                <div className="flex  gap-2 md:gap-5">
                   <div className="basis-1/4  flex w-fit ">
                      <button onClick={handdleClickReduce} className="cursor-pointer bg-BGGray-light basis-1/5 px-2 rounded-l-xl  flex justify-center items-center"><FaMinus /></button>
