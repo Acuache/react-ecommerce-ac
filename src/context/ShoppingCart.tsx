@@ -25,6 +25,25 @@ export function ShoppingCartProvider({ children }: { children: React.ReactNode }
     )
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 Diferencia entre (CU)
 export const ShoppingCartContext = createContext<ShoppingCartContextProps>({} as ShoppingCartContextProps) 
