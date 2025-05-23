@@ -18,12 +18,12 @@ export default function FrontPage() {
                     <Link to="productos">
                         <button className="bg-BGBlack text-TextWhite text-base text-center max-w-sm py-3 px-10 rounded-4xl md:text-lg cursor-pointer hover:scale-105 transition-all duration-300">Comprar ahora</button>
                     </Link>
-                    <section className="flex flex-wrap justify-center items-center gap-6 md:gap-2">
+                    <section className="flex flex-wrap justify-center items-center gap-6 md:gap-2 md:mb-20 text-center">
                         <article>
                             <span className="text-2xl font-bold md:text-3xl">+200</span>
                             <p className="text-TextGray text-xs md:text-lg">Marcas Internacionales</p>
                         </article>
-                        <article className="border-x-1 border-gray-400 px-3 md:text-3xl">
+                        <article className="xl:border-x-1 xl:border-gray-400 px-3 md:text-3xl xl:mx-2">
                             <span className="text-2xl font-bold md:text-3xl">+2,000</span>
                             <p className="text-TextGray text-xs md:text-lg">Marcas Internacionales</p>
                         </article>

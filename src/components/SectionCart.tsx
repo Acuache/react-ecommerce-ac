@@ -68,7 +68,7 @@ export default function SectionCart({ categoryName, title, products }: { categor
             {
                shuffled.map((product) => {
                   return (
-                     <SwiperSlide className='flex items-center justify-center bg-yellow-200'><CardUnity product={product} /></SwiperSlide>
+                     <SwiperSlide className='flex items-center justify-center bg-green-200'><CardUnity product={product} /></SwiperSlide>
                   )
                })
             }
