@@ -44,7 +44,7 @@ export default function SectionCart({ categoryName, title, products }: { categor
          {/* <Card products={randomFour || []} /> */}
          <Swiper
             className="mySwiper flex items-center w-full gap-2 overflow-x-auto m-auto md:gap-4  h-78 md:h-100"
-            slidesPerView={2}
+            slidesPerView={1}
             spaceBetween={5}
             pagination={{
                clickable: true,
