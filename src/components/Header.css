@@ -3,13 +3,14 @@
 }
 
 .label__aside {
+
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
     opacity: 0;
 }
 
 .label__input:checked ~ .label__aside {
-    transform: translateX(0);
+    transform: translateX(0%);
     opacity: 1;
 }
 
