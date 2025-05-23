@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom'
 
 export default function FrontPage() {
     return (
-        <main className="mb-50 md:mb-0 w-full h-[calc(100dvh-40px)] flex flex-col items-center bg-BGGray-light mt-10">
+        <main className="mb-50 md:mb-0 w-full h-[calc(100dvh-40px)] max-h-[calc(100dvh-40px)] flex flex-col items-center bg-BGGray-light mt-10">
             <div className="pt-6 w-full flex-grow flex flex-col items-center px-4 gap-2 max-w-7xl md:flex-row md:justify-center md:items-center ">
                 <div className="flex-grow basis-2/3 flex flex-col gap-4 items-center transition-all duration-300 md:mt-15 md:items-start md:basis-1/3 lg:mt-0">
                     <h1 className="text-5xl font-bold text-pretty md:text-6xl">Encuentra la ropa que coincida con tu estilo</h1>
