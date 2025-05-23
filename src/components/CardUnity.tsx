@@ -7,7 +7,7 @@ export default function Card({ product }: { product: ProductProps }) {
     const arrayStarRating = starRating(product.rating.rate)
 
     return (
-        <article className="w-50 flex flex-col md:w-65" key={product.id}>
+        <article className="w-50 flex flex-col md:w-65 m-auto" key={product.id}>
             <Link to={`/product/${encodeURIComponent(product.title)}/${product.id}`}>
                 <figure className="w-full h-50 bg-BGWhite border-2 border-BGGray-dark rounded-lg p-5 md:h-70">
                     <img className="w-full h-full object-contain" src={product.image} alt={product.title} />

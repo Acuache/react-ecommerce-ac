@@ -43,7 +43,7 @@ export default function SectionCart({ categoryName, title, products }: { categor
 
          {/* <Card products={randomFour || []} /> */}
          <Swiper
-            className="mySwiper flex items-center w-full gap-2 overflow-x-auto m-auto md:gap-4  h-78 md:h-100"
+            className="mySwiper flex items-center w-full gap-2 overflow-x-auto m-auto md:gap-4  h-78 md:h-100 bg-red-100"
             slidesPerView={1}
             spaceBetween={5}
             pagination={{
@@ -68,7 +68,7 @@ export default function SectionCart({ categoryName, title, products }: { categor
             {
                shuffled.map((product) => {
                   return (
-                     <SwiperSlide className='flex items-center justify-center'><CardUnity product={product} /></SwiperSlide>
+                     <SwiperSlide className='flex items-center justify-center bg-blue-100'><CardUnity product={product} /></SwiperSlide>
                   )
                })
             }
