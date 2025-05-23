@@ -38,7 +38,7 @@ export default function SectionCart({ categoryName, title, products }: { categor
    // Obtención de los 3 primeros
    // const randomFour = shuffled.slice(0, 4);
    return (
-      <section className='my-10  px-4 max-w-7xl m-auto '>
+      <section className='my-12  px-4 max-w-7xl m-auto '>
          <h1 className="text-TextBlack text-3xl mb-4 font-bold text-center md:text-4xl md:mb-8">{stringUPPERCASE(title)}</h1>
 
          {/* <Card products={randomFour || []} /> */}
