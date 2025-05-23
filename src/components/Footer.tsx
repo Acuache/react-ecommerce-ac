@@ -23,16 +23,16 @@ export default function Footer() {
             {/* Formulario informal */}
             {
                 context.valor && (
-                    <div className='transition-all duration-300 bg-BGBlack  min-w-md md:min-w-3xl text-balance text-TextWhite flex flex-col gap-7 lg:flex-row lg:justify-around lg:items-center p-4 py-6 md:px-8 rounded-2xl absolute -top-1/80 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
+                    <div className='transition-all duration-300 bg-BGBlack min-w-xs sm:min-w-xl md:min-w-3xl text-balance text-TextWhite flex flex-col gap-7 sm:flex-row sm:justify-around sm:items-center p-4 py-6 md:px-8 rounded-2xl absolute -top-1/80 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
                         <div className="w-full lg:basis-2/3">
                             <h2 className="text-2xl lg:text-3xl text-balance text-center font-extrabold">MANTÉNGASE AL DIA SOBRE NUESTRAS ÚLTIMAS OFERTAS</h2>
                         </div>
                         <div className="w-full lg:basis-1/3 text-md flex flex-col gap-3 items-center">
-                            <div className="md:w-1/2 lg:w-full w-full bg-BGWhite text-gray-500 rounded-md py-1 px-4 flex items-center gap-1">
+                            <div className="  w-full bg-BGWhite text-gray-500 rounded-md py-1 px-4 flex items-center gap-1">
                                 <label htmlFor={inputSearch} className="cursor-pointer text-2xl"><IoIosSearch /></label>
-                                <input id={inputSearch} type="text" placeholder="Introduzca correo electronico" className="w-full outline-none" />
+                                <input className="w-full  outline-none" id={inputSearch} type="text" placeholder="Introduzca correo electronico" />
                             </div>
-                            <button onClick={handleClick} className="w-full lg:w-full rounded-md bg-BGWhite text-TextBlack py-1 cursor-pointer md:w-1/2">Suscríbete</button>
+                            <button onClick={handleClick} className="w-full lg:w-full rounded-md bg-BGWhite text-TextBlack py-1 cursor-pointer ">Suscríbete</button>
                         </div>
                     </div>
                 )
