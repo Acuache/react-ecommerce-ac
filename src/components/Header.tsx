@@ -22,7 +22,7 @@ export default function Header() {
     }
 
     return (
-        <header className='w-full  text-TextBlack  h-14 | fixed top-0 z-500 px-2'>
+        <header className='w-full bg-BGGray-dark text-TextBlack  h-14 | fixed top-0 z-500 px-2'>
             <div className='max-w-7xl flex justify-between items-center  m-auto px-3 h-full '>
                 <Link to="/" className='text-2xl font-extrabold'>ACUACHE</Link>
                 <div className='flex  '>
