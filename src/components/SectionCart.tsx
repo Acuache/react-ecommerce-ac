@@ -60,7 +60,7 @@ export default function SectionCart({ categoryName, title, products }: { categor
                },
                1280: {
                   slidesPerView: 4,
-                  spaceBetween: 50,
+                  spaceBetween: 20,
                },
             }}
             modules={[Pagination]}
