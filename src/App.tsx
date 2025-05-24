@@ -16,7 +16,7 @@ function App() {
   return (
     <>
       <FrontPage />
-      <div className='mt-35'>
+      <div >
         <SectionCart title="Ropa para hombre" categoryName="men's clothing" products={products} />
         <SectionCart title="Joyería" categoryName="jewelery" products={products} />
         <SectionCart title="Ropa de mujer" categoryName="women's clothing" products={products} />
