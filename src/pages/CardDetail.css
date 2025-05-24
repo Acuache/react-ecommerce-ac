@@ -1,0 +1,58 @@
+.scroll {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* WebKit Scrollbar Styling */
+.scroll::-webkit-scrollbar {
+    width: 12px;
+    background: transparent;
+}
+
+/* Scrollbar Track */
+.scroll::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 20px;
+    margin: 4px;
+}
+
+/* Scrollbar Thumb */
+.scroll::-webkit-scrollbar-thumb {
+    background: transparent;
+    border: 4px solid transparent;
+    border-radius: 20px;
+    background-clip: padding-box;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 0 0 10px transparent;
+}
+
+/* Mostrar scrollbar solo en hover del contenedor */
+.scroll:hover::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 0 10px var(--color-scrollbar);
+}
+
+/* Efecto hover en el thumb */
+.scroll::-webkit-scrollbar-thumb:hover {
+    box-shadow: inset 0 0 0 10px var(--color-secondary) !important;
+    border: 2px solid transparent;
+}
+
+/* Ocultar botones de scrollbar */
+.scroll::-webkit-scrollbar-button {
+    display: none;
+}
+
+/* Corner del scrollbar */
+.scroll::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+/* Firefox */
+.scroll {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+}
+
+.scroll:hover {
+    scrollbar-color: var(--color-scrollbar) transparent;
+}

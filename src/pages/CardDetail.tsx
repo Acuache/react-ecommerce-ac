@@ -1,3 +1,4 @@
+import "./CardDetail.css"
 
 // Importaciones de interfaces
 import type { ProductProps } from "../types/ProductProps.ts"
@@ -97,7 +98,9 @@ export default function CardDetail() {
                   </div>
                   <p className="text-xl">{product.rating.rate}<span className="text-base text-TextGray">/5</span></p>
                </div>
-               <p className='text-TextGray text-sm md:text-lg'>{product.description}</p>
+               <div className="w-full h-20 scroll">
+                  <p className='text-TextGray text-sm md:text-lg'>{product.description}</p>
+               </div>
                <div className='w-full h-[1px] my-1 bg-BGGray-dark'></div>
                <section>
                   <p className="text-TextGray text-lg">Seleccionar Color</p>
