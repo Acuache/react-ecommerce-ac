@@ -1,5 +1,5 @@
 @import "tailwindcss";
-
+@plugin "@midudev/tailwind-animations";
 @theme {
   --color-TextBlack: #000000;
   --color-TextGray: #5b6565;

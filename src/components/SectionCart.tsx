@@ -27,7 +27,7 @@ import CardUnity from './CardUnity.tsx'
 
 export default function SectionCart({ categoryName, title, products }: { categoryName: string, title: string, products: ProductProps[] }) {
 
-   if (!products) return <span className="loader"></span>;
+   if (!products) return <span className="loader mt-20"></span>;
 
    // Filtro por categoría
    const filtered = products.filter(p => p.category === categoryName);

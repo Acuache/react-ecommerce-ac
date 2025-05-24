@@ -98,6 +98,7 @@ export default function CardDetail() {
                   </div>
                   <p className="text-xl">{product.rating.rate}<span className="text-base text-TextGray">/5</span></p>
                </div>
+               <h2 className="font-bold text-3xl italic">S/{product.price}</h2>
                <div className="w-full h-20 scroll">
                   <p className='text-TextGray text-sm md:text-lg'>{product.description}</p>
                </div>
