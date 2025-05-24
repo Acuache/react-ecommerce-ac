@@ -80,7 +80,7 @@ export default function ShoppingCart() {
                                        <img className="w-full h-full object-contain" src={cartProduct.image} alt={`Producto ${cartProduct.title} con identificador único ${cartProduct.id}`} />
                                     </figure>
                                     <div className='basis-3/4 flex-grow-0 flex-shrink-0 h-full flex flex-col justify-between p-1'>
-                                       <div className='bg-blue-200   w-full relative'>
+                                       <div className=' w-full relative'>
                                           <Link to={`/product/${encodeURIComponent(cartProduct.title)}/${cartProduct.id}`}>
                                              <h2 className='transition-all duration-300 text-base font-bold truncate w-60 xl:w-120'>{cartProduct.title}</h2>
                                           </Link>
