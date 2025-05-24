@@ -62,7 +62,12 @@ export default function CardDetail() {
 
    const { products: product, error, loading } = useProducts<ProductProps>({ url: `https://fakestoreapi.com/products/${id}` })
 
-   if (!product) return <p>Cargando...</p>;
+   if (!product) return (
+      <div className=' m-auto w-200 h-200 flex justify-center p-30'>
+         <span className="loader w-full scale-200 "></span>
+      </div>
+
+   );
 
    const arrayStarRating = starRating(product.rating.rate)
 
@@ -71,6 +76,7 @@ export default function CardDetail() {
          {loading && <p>Cargando datos</p>}
          {loading && <p>Cargando datos</p>}
          {error && <p>{error}</p>}
+
          <main className='p-5  max-w-7xl flex flex-col  m-auto mt-15 md:mx-none md:flex-row gap-2 md:gap-5 md:h-160'>
             <div className='flex flex-col gap-5 md:flex-row-reverse md:basis-1/2'>
                <figure className='transition-all duration-300 w-full h-70 py-4 md:h-full md:p-5 md:basis-2/3 xl:p-15 bg-BGWhite border-1 rounded-xl'>
