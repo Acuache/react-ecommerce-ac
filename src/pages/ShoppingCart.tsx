@@ -80,15 +80,15 @@ export default function ShoppingCart() {
                                        <img className="w-full h-full object-contain" src={cartProduct.image} alt={`Producto ${cartProduct.title} con identificador único ${cartProduct.id}`} />
                                     </figure>
                                     <div className='basis-3/4 flex-grow-0 flex-shrink-0 h-full flex flex-col justify-between p-1'>
-                                       <div className='flex items-center justify-between gap-1 container'>
+                                       <div className='bg-blue-200   w-full relative'>
                                           <Link to={`/product/${encodeURIComponent(cartProduct.title)}/${cartProduct.id}`}>
-                                             <h2 className='transition-all duration-300 text-base font-bold truncate w-70 xl:w-120'>{cartProduct.title}</h2>
+                                             <h2 className='transition-all duration-300 text-base font-bold truncate w-60 xl:w-120'>{cartProduct.title}</h2>
                                           </Link>
-                                          <BsFillTrash3Fill onClick={() => handleClickDelete(cartProduct.id)} className='text-red-700 cursor-pointer text-xl' />
+                                          <BsFillTrash3Fill onClick={() => handleClickDelete(cartProduct.id)} className='text-red-700 cursor-pointer text-xl absolute bg-amber-100 right-0 top-0' />
                                        </div>
                                        <p className='text-xs'>Tamaño: NO IMPLEMENTADO</p>
                                        <p className='text-xs'>Color: NO IMPLEMENTADO</p>
-                                       <div className='flex justify-between'>
+                                       <div className='flex justify-between w-full'>
                                           <p className='text-xl font-bold'>S/{cartProduct.price}</p>
                                           <div className="basis-1/4  flex w-fit text-lg md:text-xl">
                                              <button onClick={() => handdleClickReduce(cartProduct.id)} className="cursor-pointer bg-BGGray-light basis-1/5 px-2 rounded-l-xl  flex justify-center items-center md:px-4 md:py-1"><FaMinus /></button>
