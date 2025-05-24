@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom'
 
 export default function FrontPage() {
     return (
-        <main className="mb-30 w-full h-[calc(100dvh-40px)] flex flex-col items-center bg-BGGray-light mt-10">
+        <main className="mb-30 w-full h-[calc(100dvh-40px)] flex flex-col items-center bg-BGGray-light mt-10 2xl:h-[calc(100dvh-40px)]">
             <div className="pt-6 w-full flex-grow flex flex-col items-center px-4 gap-2 max-w-7xl md:flex-row md:justify-center md:items-center max-h-[calc(100dvh-40px)] ">
                 <div className="flex-grow basis-2/3 flex flex-col gap-4 items-center transition-all duration-300 md:mt-15 md:items-start md:basis-1/3 lg:mt-0">
                     <h1 className="text-5xl font-bold text-pretty md:text-6xl animate-slide-up-fade">Encuentra la ropa que coincida con tu estilo</h1>
@@ -33,7 +33,7 @@ export default function FrontPage() {
                         </article>
                     </section>
                 </div>
-                <figure className="flex-grow basis-1/3 flex md:basis-1/3 md:self-end overflow-hidden animate-slide-up-fade animate-delay-300">
+                <figure className="flex-grow basis-1/3 flex md:basis-1/3 md:self-end overflow-hidden animate-slide-up-fade animate-delay-300 min-h-100">
                     <img className="w-full h-full object-contain" src={imgHome} alt="2 Personas Posando para la página" />
                 </figure>
             </div>
