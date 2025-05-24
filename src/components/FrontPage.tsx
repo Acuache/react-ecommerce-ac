@@ -33,7 +33,7 @@ export default function FrontPage() {
                         </article>
                     </section>
                 </div>
-                <figure className="flex-grow basis-1/3 flex md:basis-1/3 md:self-end overflow-hidden animate-slide-up-fade animate-delay-300 min-h-100">
+                <figure className="flex-grow basis-1/3 flex md:basis-1/3 md:self-end overflow-hidden animate-slide-up-fade animate-delay-300 ">
                     <img className="w-full h-full object-contain" src={imgHome} alt="2 Personas Posando para la página" />
                 </figure>
             </div>
