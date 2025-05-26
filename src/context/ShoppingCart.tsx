@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react'
+import { createContext, useState, useEffect } from 'react'
 import type { ShoppingProductProps } from '../types/ShoppingProductProps'
 
 interface ShoppingCartContextProps {
@@ -12,7 +12,30 @@ interface ShoppingCartContextProps {
 export const ShoppingCartContext = createContext<ShoppingCartContextProps>({} as ShoppingCartContextProps)
 
 export function ShoppingCartProvider({ children }: { children: React.ReactNode }) {
-    const [cartProducts, setCartProducts] = useState<ShoppingProductProps[]>([])
+    // Función para obtener los productos del localStorage al inicializar
+
+
+    const getStoredProducts = (): ShoppingProductProps[] => {
+        try {
+            const storedProducts = localStorage.getItem("products")
+            return storedProducts ? JSON.parse(storedProducts) : []
+        } catch (e) {
+            console.error("Error al leer del localStorage:", e)
+            return []
+        }
+    }
+
+    const [cartProducts, setCartProducts] = useState<ShoppingProductProps[]>(getStoredProducts)
+
+    // useEffect para guardar en localStorage cuando cartProducts cambie
+    useEffect(() => {
+        try {
+            localStorage.setItem("products", JSON.stringify(cartProducts))
+        } catch (error) {
+            console.error("Error al guardar en localStorage:", error)
+        }
+    }, [cartProducts])
+
     return (
         <ShoppingCartContext.Provider
             value={{

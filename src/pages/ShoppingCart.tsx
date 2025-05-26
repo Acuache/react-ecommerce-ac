@@ -58,7 +58,7 @@ export default function ShoppingCart() {
       <div className='m-auto max-w-7xl'>
          {
             total == 0 ? (
-               <div className='transition-all duration-300 flex flex-col items-center lg:flex-row-reverse mt-15'>
+               <div className='transition-all duration-300 flex flex-col items-center lg:flex-row-reverse mt-25'>
                   <div className='lg:basis-1/2'>
                      <img className='w-full h-full object-contain' src={shoppingEmpty} alt="Carro vacio" />
                   </div>
@@ -84,7 +84,7 @@ export default function ShoppingCart() {
                                           <Link to={`/product/${encodeURIComponent(cartProduct.title)}/${cartProduct.id}`}>
                                              <h2 className='transition-all duration-300 text-base font-bold truncate w-60 xl:w-120'>{cartProduct.title}</h2>
                                           </Link>
-                                          <BsFillTrash3Fill onClick={() => handleClickDelete(cartProduct.id)} className='text-red-700 cursor-pointer text-xl absolute bg-amber-100 right-0 top-0' />
+                                          <BsFillTrash3Fill onClick={() => handleClickDelete(cartProduct.id)} className='text-red-700 cursor-pointer text-xl absolute right-0 top-0' />
                                        </div>
                                        <p className='text-xs'>Tamaño: NO IMPLEMENTADO</p>
                                        <p className='text-xs'>Color: NO IMPLEMENTADO</p>

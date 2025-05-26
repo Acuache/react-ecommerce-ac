@@ -2,7 +2,7 @@ import { createContext, useState } from 'react'
 
 interface NotificationContextProps {
     valor: boolean,
-    // setCartProducts va a disparar una actualización de un boolean
+    // setValor va a disparar una actualización de un boolean
     setValor: React.Dispatch<React.SetStateAction<boolean>>
 }
 
