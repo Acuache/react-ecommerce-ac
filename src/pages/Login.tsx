@@ -1,7 +1,7 @@
 import logoAc from '../assets/images/logoAc.png'
 import fondo from '../assets/images/fondo.avif'
 import { useId, useRef, useState, useContext } from 'react'
-import { useNavigate, Link, data } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import type { UserProps } from '../types/User'
 import { LoginContext } from '../context/LoginContext'
 
