@@ -15,7 +15,7 @@ export default function FrontPage() {
                 <div className="flex-grow basis-2/3 flex flex-col gap-4 items-center transition-all duration-300 md:mt-15 md:items-start md:basis-1/3 lg:mt-0">
                     <h1 className="text-5xl font-bold text-pretty md:text-6xl animate-slide-up-fade">Encuentra la ropa que coincida con tu estilo</h1>
                     <p className="text-sm text-TextGray text-pretty md:text-lg animate-slide-up-fade">Navegue a través de nuestra amplia gama de prendas meticulosamente elaboradas, diseñadas para resaltar su individualidad y satisfacer su estilo </p>
-                    <Link to="productos">
+                    <Link to="/productos">
                         <button className="bg-BGBlack text-TextWhite text-base text-center max-w-sm py-3 px-10 rounded-4xl md:text-lg cursor-pointer hover:scale-105 transition-all duration-300 animate-slide-up-fade">Comprar ahora</button>
                     </Link>
                     <section className="flex flex-wrap justify-center items-center gap-6 md:gap-2 md:mb-20 text-center">
