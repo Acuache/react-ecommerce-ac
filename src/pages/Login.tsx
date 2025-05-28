@@ -102,7 +102,7 @@ export default function Login() {
                     <p>ó</p>
                     <Link to="/home">
                         <button
-                            className={`w-1/3 m-auto text-xl py-1 rounded-4xl transition-all duration-300 cursor-pointer bg-gray-200`}
+                            className={`w-fit px-8 m-auto text-xl py-1 rounded-4xl transition-all duration-300 cursor-pointer bg-gray-200`}
                             onClick={() => localStorage.removeItem(user)}
                         >
                             Iniciar sin cuenta
