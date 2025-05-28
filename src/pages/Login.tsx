@@ -26,7 +26,14 @@ export default function Login() {
         } else {
             console.log("incorrecto")
         }
-        const API_KEY = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6InYuYWN1YWNoZTE1QGdtYWlsLmNvbSJ9.FSb45_QR9TNKGdm9fxQtRkUFHcxIJxC5JGl_wRwJgl4"
+        const API_KEY = import.meta.env.VITE_API_DNI_API_KEY
+
+        if (!API_KEY) {
+            console.error("La API key no está configurada")
+            setInputDNIError("Error de configuración del servidor")
+            return
+        }
+
         const url = `https://dniruc.apisperu.com/api/v1/dni/${inputDNI}?token=${API_KEY}`
 
         const fetchUser = async () => {
