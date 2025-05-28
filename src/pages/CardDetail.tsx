@@ -45,6 +45,7 @@ export default function CardDetail() {
       } else {
          context.setCartProducts(newCartProducts);
       }
+      setCount(1)
    }
 
    //Lógica de boton

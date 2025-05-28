@@ -2,12 +2,14 @@
 import { ShoppingCartContext } from '../context/ShoppingCart'
 
 // Importaciones de hooks
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 
 //Importaciones de componentes 
 import { BsFillTrash3Fill } from "react-icons/bs";
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from 'react-router-dom'
+import { IoMdCheckmarkCircleOutline } from "react-icons/io";
+
 
 
 // Importaciones de Componentes
@@ -52,13 +54,32 @@ export default function ShoppingCart() {
       return acumulador + (producto.price * producto.quantity);
    }, 0);
 
-
+   const [isView, setIsView] = useState(false)
+   const fecha = new Date();
+   const meses = [
+      "enero", "febrero", "marzo", "abril", "mayo", "junio",
+      "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"
+   ];
+   const opciones: Intl.DateTimeFormatOptions = {
+      hour: "numeric",
+      minute: "2-digit",
+      hour12: true,
+      timeZone: "America/Lima"
+   };
+   const horaPeru = fecha.toLocaleString('es-PE', opciones);
+   function handleClickBuy() {
+      setIsView(!isView)
+   }
+   function handleClickBuyModal() {
+      setIsView(!isView)
+      context.setCartProducts([])
+   }
 
    return (
-      <div className='m-auto max-w-7xl'>
+      <div className='m-auto max-w-7xl py-5'>
          {
             total == 0 ? (
-               <div className='transition-all duration-300 flex flex-col items-center lg:flex-row-reverse mt-25'>
+               <div className='transition-all duration-300 flex flex-col items-center lg:flex-row-reverse mt-35'>
                   <div className='lg:basis-1/2'>
                      <img className='w-full h-full object-contain' src={shoppingEmpty} alt="Carro vacio" />
                   </div>
@@ -116,10 +137,26 @@ export default function ShoppingCart() {
                            <h2 className='text-TextGray'>Total</h2>
                            <p>S/{(total + 20).toFixed(2)}</p>
                         </article>
-                        <button className='flex items-center justify-center gap-4 bg-BGBlack text-TextWhite w-3/4 py-2 rounded-3xl mt-3 mx-auto transition-all duration-300 hover:opacity-85 cursor-pointer'>
+                        <button onClick={handleClickBuy} className='hover:bg-BGBlack/85 group flex items-center justify-center gap-4 bg-BGBlack text-TextWhite w-3/4 py-2 rounded-3xl mt-3 mx-auto transition-all duration-300 hover:opacity-85 cursor-pointer'>
                            <p>Comprar</p>
-                           <FaArrowRight />
+                           <FaArrowRight className='group-hover:animate-shake duration-2000' />
                         </button>
+                        <div className={`${isView ? "block" : "hidden"} fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  w-full h-full z-1 backdrop-blur-xs
+`}>
+                           <div className='fixed top-1/3 left-1/2 transform -translate-x-1/2 bg-BGWhite  flex flex-col gap-2 text-center p-3 w-80 md:w-90 rounded-2xl shadow-2xl sm:gap-5'>
+                              <IoMdCheckmarkCircleOutline className='text-green-500 text-6xl m-auto' />
+                              <div>
+                                 <h2 className='text-2xl font-semibold'>¡Compra exitosa!</h2>
+                                 <p className='text-gray-400'>Su producto ha sido comprado correctamente</p>
+                              </div>
+                              <div>
+                                 <p className='text-gray-400 text-sm'>Fecha y hora de la compra:</p>
+                                 <p className='font-semibold'>{`${fecha.getDate()} de ${meses[fecha.getMonth()]} de ${fecha.getFullYear()}, ${horaPeru}`}</p>
+                              </div>
+                              <span className='text-gray-400'>"Gracias por utilizar nuestra página."</span>
+                              <button onClick={handleClickBuyModal} className='bg-BGBlack text-BGWhite w-fit m-auto text-xl py-1 px-10 rounded-2xl cursor-pointer'>Cerrar</button>
+                           </div>
+                        </div>
                      </section>
                   </main>
                </>
