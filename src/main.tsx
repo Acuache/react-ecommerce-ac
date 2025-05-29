@@ -25,17 +25,14 @@ import Profile from './pages/Profile.tsx'
 function AppLayout() {
    const location = useLocation()
 
-   // Rutas donde NO queremos mostrar Header y Footer
    const hideHeaderFooter = ['/'].includes(location.pathname.toLowerCase())
 
 
 
    return (
       <>
-         {/* Mostrar Header solo si no estamos en rutas excluidas */}
          {!hideHeaderFooter && <Header />}
 
-         {/* Las páginas a mostrar */}
          <Routes>
             <Route path='/' element={<ProtectedLogin> <Login /> </ProtectedLogin>} />
             <Route path='/home' element={<App />} />
@@ -46,7 +43,6 @@ function AppLayout() {
             <Route path="*" element={<Error404 />} />
          </Routes>
 
-         {/* Mostrar Footer solo si no estamos en rutas excluidas */}
          {!hideHeaderFooter && <Footer />}
       </>
    )
