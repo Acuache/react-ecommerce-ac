@@ -78,7 +78,7 @@ export default function Login() {
   const isButtonDisabled = inputDNI.length === 0 || inputDNIError.length > 0 || inputDNI.length !== 8
 
   return (
-    <main className='md:min-h-screen flex flex-col-reverse max-w-7xl justify-center items-center m-auto md:flex-row  md:gap-5 p-5 md:p-10'>
+    <main className='md:min-h-screen flex flex-col-reverse max-w-7xl justify-center items-center m-auto md:flex-row  md:gap-5 px-5 md:px-10'>
       <div className='w-full h-full text-center mt-3 flex flex-col justify-center items-center md:basis-1/2'>
         <form className=" w-2/3 m-auto flex flex-col gap-4 md:w-full md:gap-8" onSubmit={handleSubmit}>
           <h2 className='font-extrabold text-3xl mb-5 md:text-5xl'>Iniciar Sesión</h2>
